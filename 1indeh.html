@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IShop</title>
+    <link rel="stylesheet" href="stule.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="logo-wrapper">
+        <img src="img/ava1.jpg" alt="Логотип" class="logo">
+    </div>
+
+    <h1 class="title">Анюта Кручиніна</h1>
+
+    <p class="description">
+         Для запису пишыть в дірект в Інстаграм
+    </p>
+
+    <div class="links">
+        <a href="https://www.instagram.com/aniutka_www?igsh=ZXRnODgzZjNwOGR3" target="_blank" class="link instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@aniutka_kruchinina?_r=1&_t=ZN-95JSpiLDZp8" target="_blank" class="link tiktok">TikTok</a>
+    </div>
+
+</div>
+
+<script>
+document.querySelectorAll('.link').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const colors = ["#ff4d88", "#ff77aa", "#ff99cc", "#ff3366", "#ff5e8e"];
+        const url = this.getAttribute('href');
+
+        // створюємо 3–6 сердечок
+        const count = Math.floor(Math.random() * 4) + 3;
+
+        for (let i = 0; i < count; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '🔥';
+
+            const size = Math.random() * 20 + 15; // 15–35px
+            heart.style.fontSize = size + "px";
+
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            heart.style.color = color;
+
+            const x = e.offsetX + (Math.random() * 40 - 20);
+            const y = e.offsetY + (Math.random() * 40 - 20);
+
+            heart.style.left = x + 'px';
+            heart.style.top = y + 'px';
+
+            const rotate = Math.random() * 40 - 20;
+            heart.style.transform = `rotate(${rotate}deg)`;
+
+            this.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
+        }
+
+        // відкриваємо посилання після ефекту
+        setTimeout(() => {
+            window.open(url, '_blank');
+        }, 200);
+    });
+});
+</script>
+
+</body>
+</html>

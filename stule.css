@@ -1,0 +1,179 @@
+/* ФОН НА ВЕСЬ ЕКРАН */
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    background-image: url("img/fon2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+}
+
+/* Адаптація фону для телефонів */
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+        background-size: cover;
+        min-height: 100vh;
+    }
+}
+
+/* Напівпрозорий контейнер */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    margin-top: 40px;
+}
+
+/* КРУГ ДЛЯ ЛОГОТИПА */
+.logo-wrapper {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #d6d3d5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+/* ЛОГОТИП */
+.logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ТЕКСТ */
+.title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.description {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+/* КНОПКИ */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link {
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+    position: relative;
+    overflow: visible;
+}
+
+.instagram {
+    background: #ee68c3;
+}
+
+.instagram:hover {
+    background: #ed51be;
+}
+
+.tiktok {
+    background: #000;
+}
+
+.tiktok:hover {
+    background: #222;
+}
+
+/* АДАПТАЦІЯ ПІД ТЕЛЕФОН */
+@media (max-width: 600px) {
+
+    .container {
+        padding: 30px 15px;
+        margin-top: 20px;
+    }
+
+    .logo-wrapper {
+        width: 130px;
+        height: 130px;
+    }
+
+    .logo {
+        width: 110px;
+        height: 110px;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .link {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+}
+
+/* Анімація сердечок */
+.heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff4d88;
+    animation: fly 1s ease-out forwards;
+    pointer-events: none;
+    opacity: 0;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-60px) scale(1.8);
+        opacity: 0;
+    }
+}
+.heart {
+    position: absolute;
+    animation: fly 1s ease-out forwards;
+    pointer-events: none;
+    opacity: 0;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-80px) scale(1.8);
+        opacity: 0;
+    }
+}
